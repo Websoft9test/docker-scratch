@@ -1,18 +1,16 @@
-# image: https://hub.docker.com/r/websoft9dev/discuzq
+# fork from: https://github.com/DarkMaguz/scratch3-docker/blob/master/Dockerfile
 
-FROM ccr.ccs.tencentyun.com/discuzq/dzq:latest
+FROM node:17-alpine as builder
 
 LABEL maintainer="help@websoft9.com"
 LABEL version="latest"
-LABEL description="DiscuzQ"
+LABEL description="Scratch"
 
-ENV DISCUZQ_MYSQL_HOST=mysql
-ENV DISCUZQ_MYSQL_USER=discuzq
-ENV DISCUZQ_MYSQL_PASSWORD=discuzq
-ENV DISCUZQ_MYSQL_DATABASE=discuzq
-ENV DISCUZQ_SITENAME=DiscuzQ
+RUN apk add --no-cache nano git
 
-COPY cmd.sh /tmp
-RUN chmod +x /tmp/cmd.sh
+RUN mkdir -p /usr/app/Scratch3
+RUN git clone --depth=1 https://github.com/LLK/scratch-gui.git /usr/app/Scratch3
+RUN cd usr/app/Scratch3 && npm install && npm run build
 
-CMD ["/tmp/cmd.sh"]
+FROM nginx:1.21-alpine
+COPY --from=builder /usr/app/Scratch3/build /usr/share/nginx/html
