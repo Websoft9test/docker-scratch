@@ -4,7 +4,7 @@
 version: '3.8'
 
 services:
-  suitecrm:
+  scratch:
     image: websoft9dev/scratch:${APP_VERSION}
     container_name: ${APP_NAME}
     ports:
