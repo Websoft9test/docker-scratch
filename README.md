@@ -1,4 +1,4 @@
-# ONLYOFFICE on Docker
+# Scratch on Docker
 
 ![](https://libs.websoft9.com/common/websott9-cloud-installer.png) 
 
@@ -29,20 +29,20 @@ The following are the minimal [recommended requirements](https://github.com/only
 Use SSH to connect your instance and run the automatic installation script below
 
 ```
-sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r template
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r scratch
 ```
 ### package install
 
 1.Make package
 You can get the  package as following script
 ```
-sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r template -p
+sudo wget -N https://raw.githubusercontent.com/Websoft9/StackHub/main/docker-installer.sh; sudo bash docker-installer.sh -r scratch -p
 ```
 
 2.Install by package
 Copy package to your server, Use SSH to connect your instance and run the automatic installation script below
 ```
-sudo bash install-template
+sudo bash install-scratch
 ```
 
 ### Manual Installation
@@ -58,13 +58,13 @@ sudo systemctl start docker
 alias docker-compose='docker compose'
 ```
 
-#### Install ONLYOFFICE
+#### Install Scratch
 
-We assume that you are already familiar with Docker, and you can modify [docker-compose file](docker-compose-production.yml) by yourself
+We assume that you are already familiar with Docker, and you can modify [docker-compose file](docker-compose.yml) by yourself
 
 ```
-git clone --depth=1 https://github.com/Websoft9/docker-template
-cd docker-template
+git clone --depth=1 https://github.com/Websoft9/docker-scratch
+cd docker-scratch
 echo aaa  
 echo bbb  
 # .env file's [SITE_NAME] should  be changed to public IP or domain name to be accessed by Internet  
@@ -106,11 +106,11 @@ By default, the available users are:
 | phpmyadmin | 9090 | Web-GUI database management tool | Y |
 ## Documentation
 
-[ONLYOFFICE Administrator Guide](https://support.websoft9.com/docs/template)
+[Scratch Administrator Guide](https://support.websoft9.com/docs/scratch)
 
 ## Enterprise Support
 
-If you want to get our Enterprise Support to ensure high availability of applications, you can subscribe our [ONLYOFFICE Enterprise Support](https://apps.websoft9.com/template) 
+If you want to get our Enterprise Support to ensure high availability of applications, you can subscribe our [Scratch Enterprise Support](https://apps.websoft9.com/scratch) 
 
 What you get with a Enterprise Support subscription?
 
