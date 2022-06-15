@@ -7,6 +7,7 @@ services:
   scratch:
     image: websoft9dev/scratch:${APP_VERSION}
     container_name: ${APP_NAME}
+    restart: always
     ports:
       - '${APP_PORT}:80'
 
