@@ -1,1 +1,1 @@
-sudo sh -c 'echo "find it form https://github.com/LLK/scratch-gui/releases" 1>> /data/logs/install_version.txt'
+sudo echo "Scratch version:" $(docker exec -i scratch grep -rn "Scratch" /usr/share/nginx/html/index.html |awk -F"<title>" '{print$2}'|awk -F"</title>" '{print$1}') 1>> /data/logs/install_version.txt
